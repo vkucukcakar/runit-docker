@@ -1,0 +1,45 @@
+#!/bin/bash
+
+###
+# vkucukcakar/runit
+# runit Docker image for service supervision and zombie reaping
+# Copyright (c) 2017 Volkan Kucukcakar
+# 
+# This file is part of vkucukcakar/runit.
+# 
+# vkucukcakar/runit is free software: you can redistribute it and/or modify
+# it under the terms of the GNU General Public License as published by
+# the Free Software Foundation, either version 2 of the License, or
+# (at your option) any later version.
+# 
+# vkucukcakar/runit is distributed in the hope that it will be useful,
+# but WITHOUT ANY WARRANTY; without even the implied warranty of
+# MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+# GNU General Public License for more details.
+#
+# You should have received a copy of the GNU General Public License
+# along with this program.  If not, see <http://www.gnu.org/licenses/>.
+# 
+# This copyright notice and license must be retained in all files and derivative works.
+###
+
+
+###
+# Example runit service file
+###
+
+# Redirect stderr to stdout
+exec 2>&1
+
+# e.g.: Run another service that, this service is dependent on
+#sv start other_service || exit 1
+
+# Send text back to Docker logs (no redirection required here)
+echo "Example runit service executed. Running crond -f"
+
+# Replace the shell with a foreground program. You can pass some parameters (if there are any) to force your program running on foreground.
+exec crond -f
+
+# Note:
+# Inside other scripts, terminal of PID 1 can be used to send text back to Docker logs. 
+# e.g.: echo "Hello World" >>/proc/1/fd/1 2>&1
