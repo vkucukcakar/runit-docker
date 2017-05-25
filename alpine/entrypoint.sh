@@ -41,7 +41,6 @@ stop() {
 	echo "Killing runsvdir"
 	kill -HUP $RUNSVDIRPID
 	wait $RUNSVDIRPID
-
 	sleep 0.3
 	
 	# Cleanup the remaining processes, if there are any

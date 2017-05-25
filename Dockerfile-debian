@@ -47,6 +47,6 @@ RUN rm -rf /var/lib/apt/lists/*
 
     
 # Set up entrypoint
-COPY common/entrypoint.sh /runit/entrypoint.sh
+COPY debian/entrypoint.sh /runit/entrypoint.sh
 RUN chmod +x /runit/entrypoint.sh
 ENTRYPOINT ["/tini", "--", "/runit/entrypoint.sh"]
