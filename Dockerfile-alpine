@@ -22,7 +22,7 @@
 ###
 
 
-FROM vkucukcakar/base:alpine
+FROM vkucukcakar/base:1.0.0-alpine
 
 LABEL maintainer "Volkan Kucukcakar"
 
