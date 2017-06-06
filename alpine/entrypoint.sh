@@ -28,7 +28,9 @@ if [[ "$@" ]]; then
 	echo "Executing $@"
 	$@
 	EXITCODE=$?
-	[[ $EXITCODE > 0 ]] && exit $EXITCODE	
+	if [[ $EXITCODE > 0 ]]; then 
+		exit $EXITCODE
+	fi
 fi
 
 # TERM signal callback
