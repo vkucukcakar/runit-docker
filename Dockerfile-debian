@@ -22,7 +22,7 @@
 ###
 
 
-FROM vkucukcakar/base:1.0.0-debian
+FROM vkucukcakar/base:1.0.1-debian
 
 LABEL maintainer "Volkan Kucukcakar"
 
