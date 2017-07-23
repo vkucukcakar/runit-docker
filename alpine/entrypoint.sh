@@ -29,6 +29,7 @@ if [[ "$@" ]]; then
 	$@
 	EXITCODE=$?
 	if [[ $EXITCODE > 0 ]]; then 
+		echo "Error: $@ finished with exit code: $EXITCODE"
 		exit $EXITCODE
 	fi
 fi
