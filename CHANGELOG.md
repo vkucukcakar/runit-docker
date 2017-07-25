@@ -11,3 +11,7 @@
 ## v1.0.2
 
 - Improved entrypoint logs
+
+## v1.0.3
+
+- Updated parent image
