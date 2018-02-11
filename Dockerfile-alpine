@@ -22,15 +22,13 @@
 ###
 
 
-FROM vkucukcakar/base:1.0.2-alpine
+FROM vkucukcakar/base:1.0.3-alpine
 
 LABEL maintainer "Volkan Kucukcakar"
 
 # Install runit for Alpine.
-RUN apk add --update runit
-
-# Clean up the apk cache
-RUN rm -rf /var/cache/apk/*
+RUN apk add --update runit \
+	&& rm -rf /var/cache/apk/*
 
 
 

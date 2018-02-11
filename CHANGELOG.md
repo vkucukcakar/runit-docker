@@ -1,17 +1,22 @@
 # Changelog
 
-## v1.0.0
+## v1.0.4
 
-- Initial release
+- Fixed image size reduction
+- Upgraded parent image
 
-## v1.0.1
+## v1.0.3
 
-- Updated parent image
+- Upgraded parent image
 
 ## v1.0.2
 
 - Improved entrypoint logs
 
-## v1.0.3
+## v1.0.1
 
-- Updated parent image
+- Upgraded parent image
+
+## v1.0.0
+
+- Initial release

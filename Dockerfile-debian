@@ -22,17 +22,15 @@
 ###
 
 
-FROM vkucukcakar/base:1.0.2-debian
+FROM vkucukcakar/base:1.0.3-debian
 
 LABEL maintainer "Volkan Kucukcakar"
 
 # Install and configure runit for Debian (Create /etc/inittab before installing).
 RUN touch /etc/inittab \
     && apt-get update -q \
-    && apt-get install -y runit
-
-# Clean up the apt cache
-RUN rm -rf /var/lib/apt/lists/*
+    && apt-get install -y runit \
+	&& rm -rf /var/lib/apt/lists/*
 
 
 
