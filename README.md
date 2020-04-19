@@ -1,15 +1,16 @@
 # vkucukcakar/runit
 
-runit Docker image for service supervision and zombie reaping
+runit Docker image for service supervision (especially for images running multiple processes) and zombie process reaping
+
+vkucukcakar/rsyslog which runs multiple processes (a log daemon and a logrotate cron) is a working example of use case.
 
 * runit used for service supervision
-* tini running as PID 1 to overcome zombie process issue
-* Alpine and Debian based images
+* tini running as PID 1 to solve zombie process issue
+* Alpine based image
   
 ## Supported tags
 
 * alpine, latest
-* debian
 
 ## Examples
 
@@ -25,5 +26,12 @@ This image is not designed as a standalone image but a parent image.
 	
 *See the bundled alpine/example.run runit service file comments for instructions*
 
-*See vkucukcakar/rsyslog and vkucukcakar/cron images for other working examples*
+*See vkucukcakar/rsyslog for a working example*
 
+## Notice
+
+Support for Debian based image has reached it's end-of-life.
+Debian related file(s) were moved to "legacy" folder for documentary purposes.
+Sorry, but it's not easy for me to maintain both Alpine and Debian based images.
+
+If you really need the Debian based image, please use previous versions up to v1.0.4.
