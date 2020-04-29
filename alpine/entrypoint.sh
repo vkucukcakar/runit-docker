@@ -46,7 +46,7 @@ stop() {
 	wait $RUNSVDIRPID
 	sleep 0.3
 	
-	# Cleanup the remaining processes, if there are any
+	# Cleanup the remaining (non-runit) processes, if there are any
 	# Get all remaining PIDs excluding PID 1, current script and grep pipe itself!
 	echo "Sending TERM signal to remaining processes"
 	PROCESSES=$(pgrep . | grep -v "^1$\|^${BASHPID}$\|$$");
@@ -59,6 +59,7 @@ stop() {
 	do
 		LOOP=0
 		for PID in $PROCESSES; do
+			# Error checking without actually sending signal to check for existence of process
 			kill -0 $PID > /dev/null 2>&1 && LOOP=1
 		done
 		sleep 0.5

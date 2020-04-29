@@ -1,10 +1,11 @@
 # vkucukcakar/runit
 
-runit Docker image for service supervision (especially for images running multiple processes) and zombie process reaping
+runit Docker image for service supervision & graceful shutdown (especially for images running multiple processes), zombie process reaping
 
 vkucukcakar/rsyslog which runs multiple processes (a log daemon and a logrotate cron) is a working example of use case.
 
-* runit used for service supervision
+* runit used for service supervision (restart crashed services, dependent services etc...)
+* Graceful shutdown (when TERM signal is received from Docker, sends HUP signal to processes and manages cleanup)
 * tini running as PID 1 to solve zombie process issue
 * Alpine based image
   
