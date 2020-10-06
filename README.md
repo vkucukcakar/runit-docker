@@ -11,7 +11,8 @@ vkucukcakar/rsyslog which runs multiple processes (a log daemon and a logrotate 
   
 ## Supported tags
 
-* alpine, latest
+* latest (Alpine based)
+* Some version based tags may be available, please see tags section on Docker Hub
 
 ## Examples
 
@@ -19,7 +20,7 @@ This image is not designed as a standalone image but a parent image.
 
 *Child image Dockerfile*
 
-	FROM vkucukcakar/runit:alpine
+	FROM vkucukcakar/runit
 	
 	RUN mkdir -p /etc/service/example/
 	COPY alpine/example.run /etc/service/example/run
